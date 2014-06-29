@@ -18,18 +18,18 @@ int		LIST_ADD_LAST(T)(T_LIST(T) **list)
   if (!(new = TEMPLATE(T, create_elem())))
     return (0);
   new->next = NULL;
-  if (!(*list))
-  {
-    new->prev = NULL;
-    *list = new;
-  }
-  else
+  if (*list)
   {
     tmp = *list;
     while (tmp->next)
       tmp = tmp->next;
     new->prev = tmp;
     tmp->next = new;
+  }
+  else
+  {
+    new->prev = NULL;
+    *list = new;
   }
   return (1);
 }
@@ -79,19 +79,20 @@ void		LIST_DEL_AT(T)(T_LIST(T) **list, unsigned int i)
 {
   T_LIST(T)	*tmp;
 
-  if (!(*list))
-    return ;
-  tmp = *list;
-  while (i != 0 && tmp->next)
+  if (*list)
   {
-    tmp = tmp->next;
-    --i;
+    tmp = *list;
+    while (i != 0 && tmp->next)
+    {
+      tmp = tmp->next;
+      --i;
+    }
+    if (tmp->prev)
+      tmp->prev->next = tmp->next;
+    if (tmp->next)
+      tmp->next->prev = tmp->prev;
+    free(tmp);
   }
-  if (tmp->prev)
-    tmp->prev->next = tmp->next;
-  if (tmp->next)
-    tmp->next->prev = tmp->prev;
-  free(tmp);
 }
 
 void		LIST_DEL_LAST(T)(T_LIST(T) **list)
@@ -112,15 +113,19 @@ void		LIST_DEL_LAST(T)(T_LIST(T) **list)
 
 void		LIST_DEL_FIRST(T)(T_LIST(T) **list)
 {
-  T_LIST(T)	*tmp;
-
-  tmp = *list;
   if (*list)
   {
-    *list = (*list)->next;
-    if (*list)
+    if ((*list)->next)
+    {
+      *list = (*list)->next;
+      free((*list)->prev);
       (*list)->prev = NULL;
-    free(tmp);
+    }
+    else
+    {
+      free(*list);
+      *list = NULL;
+    }
   }
 }
 

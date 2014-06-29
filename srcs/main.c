@@ -32,7 +32,6 @@ static void	print_list(T_LIST(t_tata) **l)
 int	main()
 {
   T_LIST(t_tata)	*la = NULL;
-  //T_LIST(t_toto)	*lb = NULL;
   unsigned int		i;
 
   for (i = 0 ; i < 20 ; ++i)
@@ -43,12 +42,8 @@ int	main()
   LIST_DEL_FIRST(t_tata)(&la);
   LIST_DEL_AT(t_tata)(&la, 9);
   LIST_DEL_LAST(t_tata)(&la);
-  /*LIST_ADD_FIRST(t_toto)(&lb);
-  LIST_ADD_FIRST(t_toto)(&lb);
-  LIST_ADD_FIRST(t_toto)(&lb);*/
 
   print_list(&la);
   LIST_DEL_ALL(t_tata)(&la);
-  //LIST_DELL_ALL(t_toto)(&lb);
   return (0);
 }
