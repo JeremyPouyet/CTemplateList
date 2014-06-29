@@ -8,7 +8,7 @@ The library is templated by metaprogramming.
 Code Example :
 --------------
 
-Create your list in a my_list.h file :
+1. Create your list in a my_list.h file :
 
 |typedef struct	s_foo
 |{
@@ -16,7 +16,7 @@ Create your list in a my_list.h file :
 |   char		*data2;
 |}		t_foo;
 
-Then add your type in your main.c file :
+2. Then add your type in your main.c file :
 
 |#include "my_list.h"
 |
@@ -24,7 +24,7 @@ Then add your type in your main.c file :
 |#undef T
 |#include "list.c" /* include list.c : IMPORTANT */
 
-And finally use your list as following :
+3. And finally use your list as following :
 
 |int	main()
 |{
