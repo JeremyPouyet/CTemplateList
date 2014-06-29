@@ -1,13 +1,3 @@
-/*
-** list.c for list in /home/pouyet_j/perso/Template_List
-**
-** Made by Jérémy POUYET
-** Login   <pouyet_j@epitech.net>
-**
-** Started on  Thu Jun 19 14:35:38 2014 Jérémy POUYET
-** Last update Thu Jun 26 17:46:05 2014 Jérémy POUYET
-*/
-
 #include <stdlib.h>
 #include "list.h"
 

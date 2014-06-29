@@ -1,13 +1,3 @@
-/*
-** list.h for list in /home/pouyet_j/perso
-**
-** Made by Jérémy POUYET
-** Login   <pouyet_j@epitech.net>
-**
-** Started on  Wed Jun 18 13:58:12 2014 Jérémy POUYET
-** Last update Thu Jun 26 17:02:44 2014 Jérémy POUYET
-*/
-
 #include "templates.h"
 
 # define T_LIST(type) TEMPLATE(type, list)

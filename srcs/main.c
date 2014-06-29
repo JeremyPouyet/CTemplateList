@@ -1,13 +1,3 @@
-/*
-** main.c for list in /home/pouyet_j/perso
-**
-** Made by Jérémy POUYET
-** Login   <pouyet_j@epitech.net>
-**
-** Started on  Wed Jun 18 14:22:10 2014 Jérémy POUYET
-** Last update Sat Jun 28 19:00:22 2014 Jérémy POUYET
-*/
-
 #include <stdlib.h>
 #include <stdio.h>
 #include "toto.h"
