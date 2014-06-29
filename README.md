@@ -22,8 +22,8 @@ typedef struct	s_foo
 #include "my_list.h"
 
 #define T t_foo
-#undef T
 #include "list.c" /* include list.c : IMPORTANT */
+#undef T
 ```
 3. And finally use your list as following :
 ```c
