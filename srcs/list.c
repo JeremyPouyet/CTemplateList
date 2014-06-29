@@ -143,7 +143,7 @@ T		*LIST_GET_LAST(T)(T_LIST(T) **list)
   {
     if((*list)->next)
       return LIST_GET_LAST(T)(&(*list)->next);
-    return (&(*list)->value);
+    return &(*list)->value;
   }
   return NULL;
 }
@@ -157,7 +157,11 @@ T		*LIST_GET_FIRST(T)(T_LIST(T) **list)
 
 T		*LIST_GET_AT(T)(T_LIST(T) **list, unsigned int i)
 {
-  (void)list;
-  (void)i;
+  if (*list)
+  {
+    if (i == 0)
+      return &(*list)->value;
+    return LIST_GET_AT(T)(&(*list)->next, --i);
+  }
   return NULL;
 }
