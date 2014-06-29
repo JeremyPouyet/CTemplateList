@@ -10,34 +10,34 @@ Code Example :
 
 1. Create your list in a my_list.h file :
 
-```C
-|typedef struct	s_foo
-|{
-|   int		data1;
-|   char		*data2;
-|}		t_foo;
+```c
+typedef struct	s_foo
+{
+   int		data1;
+   char		*data2;
+}		t_foo;
 ```
 2. Then add your type in your main.c file :
 ```c
-|#include "my_list.h"
-|
-|#define T t_foo
-|#undef T
-|#include "list.c" /* include list.c : IMPORTANT */
+#include "my_list.h"
+
+#define T t_foo
+#undef T
+#include "list.c" /* include list.c : IMPORTANT */
 ```
 3. And finally use your list as following :
-```C
-|int	main()
-|{
-|   T_LIST(t_foo) *my_list = NULL;
-|
-|   LIST_ADD_FIRST(t_foo)(&my_list);
-|   LIST_ADD_LAST(t_foo)(&my_list);
-|   LIST_ADD_AT(t_foo)(&my_list, 1);
-|
-|   LIST_DEL_FIRST(t_foo)(&my_list);
-|   LIST_DEL_LAST(t_foo)(&my_list);
-|   LIST_DEL_AT(t_foo)(&my_list, 0);
-|}
+```c
+int	main()
+{
+   T_LIST(t_foo) *my_list = NULL;
+
+   LIST_ADD_FIRST(t_foo)(&my_list);
+   LIST_ADD_LAST(t_foo)(&my_list);
+   LIST_ADD_AT(t_foo)(&my_list, 1);
+
+   LIST_DEL_FIRST(t_foo)(&my_list);
+   LIST_DEL_LAST(t_foo)(&my_list);
+   LIST_DEL_AT(t_foo)(&my_list, 0);
+}
 ```
 See list.h to to know all the functions.
