@@ -1,4 +1,4 @@
-CTemplateList
+B1;2802;0cCTemplateList
 =============
 
 Simple library which allow every structure to become a double link list.
@@ -41,3 +41,7 @@ int	main()
 }
 ```
 See list.h to to know all the functions.
+
+####Contact :
+
+If you find bug or have optimization ideas, contact me at jeremy.pouyet@epitech.eu
