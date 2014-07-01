@@ -1,4 +1,4 @@
-B1;2802;0cCTemplateList
+TemplateList
 =============
 
 Simple library which allow every structure to become a double link list.
