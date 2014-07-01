@@ -12,7 +12,7 @@ OBJS	= $(SRCS:.c=.o)
 
 CFLAGS	+= -Werror -Wall -W
 
-CFLAGS	+= -I./include
+CFLAGS	+= -I./includes
 
 all:		$(NAME)
 

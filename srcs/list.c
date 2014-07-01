@@ -10,13 +10,13 @@ static T_LIST(T)	*TEMPLATE(T, create_elem)(void)
 ** add
 */
 
-int		LIST_ADD_LAST(T)(T_LIST(T) **list)
+T		*LIST_ADD_LAST(T)(T_LIST(T) **list)
 {
   T_LIST(T)	*tmp;
   T_LIST(T)	*new;
 
   if (!(new = TEMPLATE(T, create_elem())))
-    return (0);
+    return NULL;
   new->next = NULL;
   if (*list)
   {
@@ -31,24 +31,24 @@ int		LIST_ADD_LAST(T)(T_LIST(T) **list)
     new->prev = NULL;
     *list = new;
   }
-  return (1);
+  return &new->value;
 }
 
-int		LIST_ADD_FIRST(T)(T_LIST(T) **list)
+T		*LIST_ADD_FIRST(T)(T_LIST(T) **list)
 {
   T_LIST(T)	*new;
 
   if (!(new = TEMPLATE(T, create_elem())))
-    return (0);
+    return NULL;
   new->prev = NULL;
   new->next = *list;
   if (*list)
     (*list)->prev = new;
   *list = new;
-  return (1);
+  return &new->value;
 }
 
-int		LIST_ADD_AT(T)(T_LIST(T) **list, unsigned int i)
+T		*LIST_ADD_AT(T)(T_LIST(T) **list, unsigned int i)
 {
   T_LIST(T)	*new;
   T_LIST(T)	*tmp;
@@ -56,7 +56,7 @@ int		LIST_ADD_AT(T)(T_LIST(T) **list, unsigned int i)
   if (i == 0 || !(*list))
     return (LIST_ADD_FIRST(T)(list));
   if (!(new = TEMPLATE(T, create_elem())))
-    return (0);
+    return NULL;
   tmp = *list;
   while (i != 0 && tmp->next)
   {
@@ -68,7 +68,7 @@ int		LIST_ADD_AT(T)(T_LIST(T) **list, unsigned int i)
   if (tmp->prev)
     tmp->prev->next = new;
   tmp->prev = new;
-  return (1);
+  return &new->value;
 }
 
 /*

@@ -46,12 +46,14 @@ static void	print_list(T_LIST(t_a) **l)
 int	main()
 {
   T_LIST(t_a)	*la = NULL;
+  t_a		*node = NULL;
   unsigned int		i;
 
   for (i = 0 ; i < 20 ; ++i)
   {
-    LIST_ADD_LAST(t_a)(&la);
-    init_link(LIST_GET_LAST(t_a)(&la));
+    if (!(node  = LIST_ADD_LAST(t_a)(&la)))
+      return (1);
+    init_link(node);
   }
   LIST_DEL_FIRST(t_a)(&la);
   LIST_DEL_AT(t_a)(&la, 9);
