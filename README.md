@@ -1,7 +1,7 @@
 TemplateList
 =============
 
-Simple library which allow every structure to become a double link list.
+Simple library which allows every structure to become a double link list.
 
 The library is templated by metaprogramming.
 
@@ -40,10 +40,10 @@ int	main()
    LIST_DEL_AT(t_foo)(&my_list, 0);
 }
 ```
-See list.h to to know all the functions.
+See includes/list.h to know all available functions.
 
-See main.c for a functional example.
+See srcs/main.c for a functional example.
 
 ####Contact :
 
-If you find bug or have optimization ideas, contact me at jeremy.pouyet@epitech.eu
+If you find a bug or have optimization ideas, contact me at jeremy.pouyet@epitech.eu
